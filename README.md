@@ -5,21 +5,35 @@ This repository contains implementations of the evaluation tools used in the stu
 This repository include scripts that are designed to operate directly on each of the two datasets used in the paper:
 
 •	DS1: Question–answer pairs derived from EU cross-border healthcare information materials.
+
 •	DS2: Structured legal case scenarios related to EU healthcare law.
 
 The provided code pipelines load these datasets, preprocess the texts, generate evaluation scores for LLM responses, and output comparable metrics across models.
+
 Full-Text Evaluation Tools
+
 BERTScore
+
 Measures semantic similarity between generated responses and reference answers by aligning contextual token embeddings from a pretrained BERT model. It computes precision, recall, and F1 scores based on semantic token matching.
+
 Sentence-BERT (SBERT)
+
 Generates fixed-length sentence embeddings that allow efficient semantic similarity comparison using cosine similarity. This enables evaluation of overall semantic alignment between responses and ground-truth answers.
+
 all-MiniLM-L6-v2
+
 A lightweight general-purpose sentence transformer model used for computing baseline semantic similarity between texts.
+
 LegalBERT
+
 A domain-specific transformer model trained on legal corpora. It captures legal terminology and concepts, making it particularly useful for evaluating responses in EU healthcare law contexts.
+
 BioBERT
+
 A biomedical language model trained on medical literature. It helps capture healthcare-related terminology within responses.
+
 Word Mover’s Distance (WMD)
+
 Computes the semantic distance between documents by measuring the minimum cost required to transform one document’s word embeddings into another.
 GPTScore
 A probability-based evaluation method where a generative model evaluates responses using structured prompts and assigns holistic quality scores.
